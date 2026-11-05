@@ -1,223 +1,179 @@
-
 /* =================================
 1. Reset default browser styles
 ================================= */
-          *{
-            margin: 0;
-            padding: 0;
-            box-sizing:border-box;}
+* {
+  margin: 3px;
+  padding: 0;
+  box-sizing: border-box;
+  border-color: aqua;
+}
 /* =================================
-3. Headings
+3. header / main / footer and Headings
 ================================= */
-        
-        h1 {
-            font-family: Calibri, sans-serif;
-            font-weight: bold;
-            font-size: 50px;
-            text-align: center;
-            color: rgba(213, 22, 54, 0.8);
-            margin-bottom: 10px;
-            margin-top: 15px;
-            }
-        h2
-        {
-            font-family: Calibri, sans-serif;
-            font-size: 28px;
-            font-style: italic;
-            text-decoration: underline;
-            color: rgba(213, 22, 54, 0.8);
-            margin-top: 5px;
-            margin-bottom: 15px;
-        }
-        h3 
-        {
-            font-family: Calibri, sans-serif;
-            font-size: 22px;
-            color: blue;
-        }
-        .header-line {
-            border: 1px solid black;
-            border-radius: 12px;
-        }
-/* =================================
-2. General page styling
-================================= */
-        body {
-            font-family: Calibri, Arial, sans-serif;
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 50px whitesmoke;
-            border: 3px solid #8b3a3a;
-            border-radius: 12px;
-        }
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 30px;    
-            }
-      
+header {
+  text-align: center;
+  font-family: Calibri, sans-serif;
+  background-color: #f4f7f4;
+}
+main {
+  font-family: Calibri, sans-serif;
+  background-color: #f8faf8;
+}
+footer {
+  font-family: Calibri, sans-serif;
+  padding: 20px;
+  background-color: #f4f7f4;
+  border-top: 2px solid #ccc;
+}
+h1 {
+  font-size: 50px;
+  text-align: center;
+  background-color: #e2e9e2;
+  color: #9b2226;
+  margin-bottom: 10px;
+}
+h2 {
+  font-size: 40px;
+  font-style: italic;
+  color: #2c362f;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: #d5e0d5;
+}
+h3 {
+  font-size: 30px;
+  color: #ca6702;
+  padding-inline: 10px;
+}
+
 /* =================================
    4. Paragraphs
-================================= */ 
-p{
-    font-size: 20px;
-  }
-li{
-    font-size: 20px;
-  }       
-  .description {
-    font-family: Calibri, sans-serif;
-    font-size: 20px;
-    text-align: center;
-    line-height: 1.5;
-    color: #333333;
-    margin: 20px 15px;
-  }
-  .conclusion {
-    font-family: Calibri, sans-serif;
-    font-size: 20px;
-    text-align: center;
-    line-height: 1.5;
-    color: #a52340;
-    margin: 20px 15px;
-  }
-  /* =================================
-   5. Ingredient and instruction lists
 ================================= */
-ul,
-ol {
-    font-family: Calibri, sans-serif;
-    font-size: 18px;
-    line-height: 1.8;
-    margin: 10px 20px 20px 40px;
-    padding-left: 15px;
-}
-ul {
-    list-style-type: disc;
-}
-ol {
-    list-style-type: decimal;
+p {
+  font-size: 20px;
+  padding-inline: 10px;
 }
 li {
-    margin-bottom: 6px;
-}
-.instructions > li {
-    margin-bottom: 20px;
+  font-size: 20px;
 }
 
-
+/* =================================
+   5. ordered and unordered lists
+================================= */
+ol {
+  font-size: 18px;
+  padding-left: 50px;
+}
+ul {
+  list-style-type: disc;
+  padding-left: 30px;
+}
 
 /* Highlighted ingredient names */
 .ingredient {
-    color: #c51f3a;
-    font-weight: bold;
+  color: #c51f3a;
+  font-weight: bold;
 }
 /* =================================
    6. Images and captions
 ================================= */
-  img {
-    max-width: 100%;
-    height: auto;
-}
-  .main-image {
-    display: block;
-    width: 500px;
-    height: 300px;
-    max-width: 100%;
-    object-fit: cover;
-    margin: 0 auto;
+
+.main-image {
+  display: block;
+  width: 300px;
+  height: 300px;
+  max-width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
 }
 figure {
-    margin: 15px;
-    text-align: center;
+  margin: 15px;
+  text-align: center;
 }
 
 figure img {
-    width: 300px;
-    height: 200px;
-    max-width: 100%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-    border-radius: 8px;
+  width: 300px;
+  height: 200px;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
 }
 figcaption {
-    font-family: Calibri, sans-serif;
-    font-size: 16px;
-    color: #555555;
-    text-align: center;
-    margin-top: 8px;
+  font-size: 16px;
+  color: #555555;
+  text-align: center;
+  margin-top: 8px;
 }
 /* Image gallery */
 .image-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-    max-width: 700px;
-    margin: 20px auto;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  max-width: 700px;
+  margin: 20px auto;
+  width: 100%;
 }
 
 .image-gallery figure {
-    min-width: 0;
-    margin: 0;
+  min-width: 0;
+  margin: 0;
 }
 
 .image-gallery img {
-    display: block;
-    width: 100%;
-    height: 200px;
-    max-width: 100%;
-    object-fit: cover;
-    margin: 0;
-    border-radius: 8px;
+  display: block;
+  width: 100%;
+  height: 200px;
+  max-width: 100%;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 8px;
 }
 
 /* =================================
    8. Mobile responsive styling
 ================================= */
 @media (max-width: 600px) {
-    body {
-        padding: 12px;
-    }
+  body {
+    padding: 10px;
+  }
 
-    h1 {
-        font-size: 36px;
-    }
+  h1 {
+    font-size: 36px;
+  }
 
-    h2 {
-        font-size: 24px;
-    }
+  h2 {
+    font-size: 24px;
+  }
 
-    h3 {
-        font-size: 20px;
-    }
+  h3 {
+    font-size: 20px;
+  }
 
-    p,
-    ul,
-    ol {
-        font-size: 17px;
-    }
+  p,
+  ul,
+  ol {
+    font-size: 17px;
+  }
 
-    .description,
-    .conclusion {
-        font-size: 17px;
-        line-height: 1.6;
-    }
+  .description,
+  .conclusion {
+    font-size: 17px;
+    line-height: 1.6;
+  }
 
-    td {
-        padding: 3px;
-    }
+  td {
+    padding: 3px;
+  }
 
-    figcaption {
-        font-size: 13px;
-    }
+  figcaption {
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 600px) {
-    .image-gallery {
-        grid-template-columns: 1fr;
-    }
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
 }
-
-

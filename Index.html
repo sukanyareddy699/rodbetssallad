@@ -6,39 +6,154 @@
     <title>Rödbetssallad</title>
     <link rel="stylesheet" href="rodbetssallad.css" />
   </head>
-  <header>
-    <h1>Rödbetssallad</h1>
-    <p>
-      Gör din egen klassiska rödbetssallad snabbt och enkelt med detta populära
-      recept.<br />
-      Med äpple och rödlök får salladen en frisk, söt och krispig smak. <br />
-      Passar utmärkt till julbordet.
-    </p>
-    <img
-      src="images/rödbetssallad.webp"
-      fetchpriority="high"
-      alt="rödbetssallad med äpple och rödlök"
-      class="main-image"
-    />
-    <p>
-      Otroligt god rödbetssallad! Med äpple och röd lök blir rödbetssalladen
-      supergod och du vill aldrig mer ha den köpta.
-    </p>
-  </header>
+  <body>
+    <header class="recipe-header">
+      <div class="skip-link-container">
+        <a href="#main-content" class="skip-link">skip to main content</a>
+      </div>
+      <div class="labels">
+        <span class="label"> Classic Swedish Recipe </span>
 
-  <main>
-    <section>
-      <h2>Ingredienser:</h2>
-      <ol>
-        <li>inlagda rödbetor</li>
-        <li>majonnäs</li>
-        <li>crème fraiche</li>
-        <li>senap</li>
-        <li>salt</li>
-        <li>svartpeppar</li>
-        <li>liten röd lök</li>
-        <li>röda äpplen</li>
-      </ol>
+        <span class="christmas-label">
+          🎄 Christmas Julbord &amp; Classics
+        </span>
+      </div>
+
+      <h1>Rödbetssallad</h1>
+      <div class="intro">
+        <p class="description">
+          &#128523; Gör din egen klassiska rödbetssallad snabbt och enkelt med
+          detta populära recept. Med äpple och rödlök får salladen en frisk, söt
+          och krispig smak. Passar utmärkt till julbordet.
+          <br />&#128512; Otroligt god rödbetssallad! Med äpple och röd lök blir
+          rödbetssalladen supergod och du vill aldrig mer ha den köpta.
+        </p>
+
+        <img
+          class="main-image"
+          src="images/rödbetssallad.webp"
+          fetchpriority="high"
+          alt="rödbetssallad med äpple och rödlök"
+        />
+      </div>
+      <div class="recipe-info">
+        <div class="info-box">
+          <span class="info-icon">⏱️</span>
+          <span class="info-label">Prep Time</span>
+          <strong class="info-value">20 min</strong>
+        </div>
+
+        <div class="info-box">
+          <span class="info-icon">👨‍🍳</span>
+          <span class="info-label">Difficulty</span>
+          <strong class="info-value">Easy</strong>
+        </div>
+
+        <div class="info-box">
+          <span class="info-icon">🍽️</span>
+          <span class="info-label">Servings</span>
+          <strong class="info-value">6 servings</strong>
+        </div>
+
+        <div class="info-box">
+          <span class="info-icon">🏷️</span>
+          <span class="info-label">Category</span>
+          <strong class="info-value">Julbord &amp; Sides</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="ingredienser-block">
+      <!-- FLEXBOX: Rubrik till vänster, räknare till höger -->
+      <div class="ingredienser-topp">
+        <div>
+          <h2>Ingredienser</h2>
+          <p class="undertext">Klicka för att bocka av under matlagningen</p>
+        </div>
+        <span class="raknare">0 / 8</span>
+      </div>
+
+      <!-- FLEXBOX: Portionstext och knapprad -->
+      <div class="portioner-box">
+        <p class="portioner-text">
+          Antal portioner: <strong>2 portioner</strong>
+        </p>
+        <div class="portion-knappar">
+          <button type="button" class="aktiv-portion">2</button>
+          <button type="button">4</button>
+          <button type="button">6</button>
+          <button type="button">8</button>
+          <button type="button">12</button>
+        </div>
+      </div>
+
+      <!-- GRID:  -->
+      <ul class="ingrediens-lista">
+        <li>
+          <label class="ingrediens-rad">
+            <input type="checkbox" />
+            <span class="mangd">133,33 g</span>
+            <span class="namn"
+              >inlagda rödbetor (avrunnen vikt, ca 600 g burk)</span
+            >
+          </label>
+        </li>
+        <li>
+          <label class="ingrediens-rad">
+            <input type="checkbox" />
+            <span class="mangd">1/3 dl</span>
+            <span class="namn">majonnäs</span>
+          </label>
+        </li>
+        <li>
+          <label class="ingrediens-rad">
+            <input type="checkbox" />
+            <span class="mangd">1/3 dl</span>
+            <span class="namn">creme fraiche</span>
+          </label>
+        </li>
+        <li>
+          <label class="ingrediens-rad">
+            <input type="checkbox" />
+            <span class="mangd">1/4 msk</span>
+            <span class="namn">senap (0,5-1 efter styrka)</span>
+          </label>
+        </li>
+        <li>
+          <label class="ingrediens-rad">
+            <input type="checkbox" />
+            <span class="mangd">2/3 krm</span>
+            <span class="namn">salt</span>
+          </label>
+        </li>
+        <li>
+          <label class="ingrediens-rad">
+            <input type="checkbox" />
+            <span class="mangd">1/3 krm</span>
+            <span class="namn">svartpeppar</span>
+          </label>
+        </li>
+        <li>
+          <label class="ingrediens-rad">
+            <input type="checkbox" />
+            <span class="mangd">1/3 st</span>
+            <span class="namn">liten röd lök</span>
+          </label>
+        </li>
+        <li>
+          <label class="ingrediens-rad">
+            <input type="checkbox" />
+            <span class="mangd">2/3 st</span>
+            <span class="namn">röda äpplen (ca 300g)</span>
+          </label>
+        </li>
+      </ul>
+
+      <!-- FLEXBOX: Knappar längst ner -->
+      <div class="knapp-rad">
+        <button type="button" class="knapp-kopiera">Kopiera inköpslista</button>
+        <button type="button" class="knapp-rensa">Rensa</button>
+      </div>
     </section>
 
     <section>
@@ -65,7 +180,7 @@
             stark tillsätt mer majonnäs och crème fraiche.)
           </p>
 
-          <ul>
+          <ul class="boxmodel">
             <li>1 dl <b class="ingredient">majonnäs</b></li>
             <li>1 dl <b class="ingredient">crème fraiche</b></li>
             <li>0,5-1 msk <b class="ingredient">senap</b></li>
@@ -130,20 +245,103 @@
           </figure>
         </div>
       </ol>
-    </section>
-  </main>
 
-  <footer>
-    <h2>Information och tips</h2>
-    <h3>Serveringstips</h3>
-    <p>
-      Servera rödbetssallad på julbordet eller gör en god smörgås med julskinka,
-      köttbullar och rödbetssallad. Garnera gärna med persilja.
-    </p>
-    <h3>Hållbarhet och förvaring</h3>
-    <p>
-      Rödbetssalladen håller sig 3-4 dagar i kylskåp. Lämpar sig inte för att
-      frysas.
-    </p>
-  </footer>
+      <footer>
+        <h2>Information och tips</h2>
+        <details open>
+          <summary>Serveringstips</summary>
+          <p>
+            Servera rödbetssallad på julbordet eller gör en god smörgås med
+            julskinka, köttbullar och rödbetssallad. Garnera gärna med persilja.
+          </p>
+        </details>
+        <details open>
+          <summary>Hållbarhet och förvaring</summary>
+          <p>
+            Rödbetssalladen håller sig 3-4 dagar i kylskåp. Lämpar sig inte för
+            att frysas.
+          </p>
+        </details>
+      </footer>
+
+      <form action="" method="get">
+        <div>
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="jonny"
+            required
+            minlength="3"
+            maxlength="30"
+          />
+          <!--aria-describedby="name-help"
+          <p id="name-help">Ange ditt för och efternamn</p>-->
+        </div>
+        <div>
+          <label for="email">E-postaddress</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Ange din e-postadress"
+          />
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="newsletter"
+            name="newsletter"
+            value="yes"
+            checked=""
+          />
+          <label for="newsletter">jag vill få information on recept</label>
+        </div>
+        <fieldset>
+          <legend>hur mycker tycker ni om recept</legend>
+          <div>
+            <input type="radio" id="lite" name="tycker" value="lite" />
+            <label type="lite">lite</label>
+          </div>
+          <div>
+            <input type="radio" id="mellan" name="tycker" value="mellan" />
+            <label type="mellan">mellan</label>
+          </div>
+          <div>
+            <input type="radio" id="mycket" name="tycker" value="mycket" />
+            <label type="mycket">mycket</label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="receipe"> choose receipt</label>
+          <select id="receipe" name="receipe">
+            <option value="">choose alternative</option>
+            <option value="salad">rödbetssallad</option>
+            <option value="frukost">chia pudding</option>
+            <option value="lunch">biryani</option>
+            <option value="middag">pasta</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend for="feedback">feedback</legend>
+          <textarea
+            id="feedback"
+            name="feedback"
+            rows="10"
+            cols="40"
+          ></textarea>
+        </fieldset>
+        <!-- <input type="password" id="password" name="password">
+        <input type="number">
+        <input type="date">
+        <input type="tel">
+        <input type="color">
+        <input type="range">-->
+        <button type="submit">send</button>
+      </form>
+    </section>
+  </body>
 </html>

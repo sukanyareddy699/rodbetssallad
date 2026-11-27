@@ -1,118 +1,338 @@
 /* =================================
 1. Reset default browser styles
 ================================= */
-* {
-  margin: 3px;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  border-color: aqua;
 }
+
+:root {
+  --label-color: #e3ebe3;
+  --label-text-color: darkred;
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --bg-color: #f4f7f4;
+  --mainbg-color: #f8faf8;
+  --hbg-color: #e2e9e2; /*h1 backgroundcolor*/
+  --htext-color: #9b2226; /* header text color */
+  --subhbg-color: #d5e0d5; /*h2 backgroundcolor*/
+  --subhtext-color: #2c362f; /* h2 text color */
+  --ingretext-color: #c51f3a; /* ingredient text color */
+  --info-bg-color: #fff8f0; /* info box background color */
+  --info-border-color: #ddd; /* info box border color */
+  --bg-subtle: #eef3ee;
+  --accent-primary-dark: #7a191c;
+  --text-muted: #647267;
+}
+
+/* ==============skip link===================*/
+.skip-link-container {
+  position: relative;
+}
+
+.skip-link {
+  position: absolute;
+  margin-inline-start: 1.25rem;
+  left: 0.75rem;
+  padding: 1rem 1rem;
+  background-color: var(--label-color);
+  color: var(--black-color);
+  font-weight: 500;
+  border: 0.125rem solid var(--black-color);
+  border-radius: 0.25rem;
+}
+.skip-link:focus {
+  margin-block-start: 1rem;
+}
+
 /* =================================
 3. header / main / footer and Headings
 ================================= */
 header {
   text-align: center;
   font-family: Calibri, sans-serif;
-  background-color: #f4f7f4;
+  background-color: var(--bg-color);
 }
 main {
   font-family: Calibri, sans-serif;
-  background-color: #f8faf8;
+  background-color: var(--mainbg-color);
 }
 footer {
   font-family: Calibri, sans-serif;
-  padding: 20px;
-  background-color: #f4f7f4;
-  border-top: 2px solid #ccc;
+  padding: 1.25rem;
+  background-color: var(--bg-color);
+  border-top: 0.125rem solid #ccc;
 }
 h1 {
-  font-size: 50px;
+  font-size: 3.125rem;
   text-align: center;
-  background-color: #e2e9e2;
-  color: #9b2226;
-  margin-bottom: 10px;
+  background-color: var(--hbg-color);
+  color: var(--htext-color);
 }
 h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-style: italic;
-  color: #2c362f;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  background-color: #d5e0d5;
-}
-h3 {
-  font-size: 30px;
-  color: #ca6702;
-  padding-inline: 10px;
+  color: var(--subhtext-color);
+  margin-top: 0.3125rem;
+  margin-bottom: 0.625rem;
+  background-color: var(--subhbg-color);
 }
 
 /* =================================
    4. Paragraphs
 ================================= */
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.description {
+  flex: 1;
+  text-align: justify;
+  width: 50%;
+  min-width: 0;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  padding: 10px;
+  margin: 0;
+  background-color: var(--info-bg-color);
+  border: 1px solid var(--info-border-color);
+  border-radius: 10px;
+}
+
 p {
-  font-size: 20px;
-  padding-inline: 10px;
+  font-size: 1.25rem;
+  padding-inline: 0.625rem;
 }
 li {
-  font-size: 20px;
+  font-size: 1.25rem;
+  padding: 0.12rem;
 }
 
 /* =================================
    5. ordered and unordered lists
 ================================= */
 ol {
-  font-size: 18px;
-  padding-left: 50px;
+  font-size: 1.125rem;
+  padding-left: 3.125rem;
 }
 ul {
   list-style-type: disc;
-  padding-left: 30px;
+  padding-left: 1.875rem;
 }
 
-/* Highlighted ingredient names */
-.ingredient {
-  color: #c51f3a;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--subhtext-color);
+  padding: 32px 16px;
+}
+
+/* BOX MODEL */
+.ingredienser-block {
+  max-width: 540px;
+  margin: 0 auto;
+  background-color: var(--white-color);
+  border: 1px solid var(--subhbg-color);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+/* FLEXBOX: Rubrik till vänster, räknare till höger */
+.ingredienser-topp {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.ingredienser-topp h2 {
+  font-size: 24px;
+  color: var(--subhtext-color);
+}
+
+.undertext {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.raknare {
+  background-color: var(--bg-subtle);
+  color: var(--htext-color);
+  border: 1px solid var(--subhbg-color);
   font-weight: bold;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* FLEXBOX: Portionsrad med text och knappar */
+.portioner-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--subhbg-color);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.portioner-text {
+  font-size: 14px;
+}
+
+/* FLEXBOX: Portionsknappar i en rad */
+.portion-knappar {
+  display: flex;
+  gap: 6px;
+}
+
+.portion-knappar button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--subhbg-color);
+  border-radius: 6px;
+  background-color: var(--white-color);
+  color: var(--subhtext-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.portion-knappar button.aktiv-portion {
+  background-color: var(--htext-color);
+  border-color: var(--htext-color);
+  color: var(--white-color);
+}
+
+/* Lista utan punkter */
+.ingrediens-lista {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.ingrediens-lista li {
+  border-bottom: 1px solid var(--bg-subtle);
+}
+
+.ingrediens-lista li:last-child {
+  border-bottom: none;
+}
+
+/* GRID: 3 kolumner per ingrediens (kryssruta | mängd | namn) */
+.ingrediens-rad {
+  display: grid;
+  grid-template-columns: 20px 85px 1fr;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 6px;
+  cursor: pointer;
+}
+
+.ingrediens-rad input[type="checkbox"] {
+  accent-color: var(--htext-color);
+  cursor: pointer;
+}
+
+.mangd {
+  font-weight: bold;
+  color: var(--htext-color);
+  white-space: nowrap;
+}
+
+/* Stryk över när kryssrutan är ikryssad */
+.ingrediens-rad input[type="checkbox"]:checked ~ span {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* FLEXBOX: Knapprad längst ner */
+.knapp-rad {
+  display: flex;
+  gap: 10px;
+}
+
+.knapp-kopiera,
+.knapp-rensa {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.knapp-kopiera {
+  flex: 1; /* Tar upp resterande plats i flex-raden */
+  background-color: var(--htext-color);
+  color: var(--white-color);
+  border: 1px solid var(--htext-color);
+}
+
+.knapp-kopiera:hover {
+  background-color: var(--accent-primary-dark);
+}
+
+.knapp-rensa {
+  background-color: var(--white-color);
+  color: var(--subhtext-color);
+  border: 1px solid var(--subhtext-color);
+}
+
+.knapp-rensa:hover {
+  background-color: var(--bg-subtle);
 }
 /* =================================
    6. Images and captions
 ================================= */
 
 .main-image {
+  flex: 1;
+  width: 50%;
+  max-width: 50%;
+  min-width: 0;
+  height: auto;
   display: block;
-  width: 300px;
-  height: 300px;
-  max-width: 100%;
   object-fit: cover;
-  margin: 0 auto;
+  border-radius: 10px;
 }
 figure {
-  margin: 15px;
+  margin: 0.9375rem;
   text-align: center;
 }
 
 figure img {
-  width: 300px;
-  height: 200px;
+  width: 18.75rem;
+  height: 12.5rem;
   max-width: 100%;
   object-fit: cover;
   display: block;
   margin: 0 auto;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 figcaption {
-  font-size: 16px;
-  color: #555555;
+  font-size: 1rem;
+  color: var(--black-color);
   text-align: center;
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 /* Image gallery */
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 15px;
+  gap: 0.9375rem;
   max-width: 700px;
-  margin: 20px auto;
+  margin: 1.25rem auto;
   width: 100%;
 }
 
@@ -124,56 +344,182 @@ figcaption {
 .image-gallery img {
   display: block;
   width: 100%;
-  height: 200px;
+  height: 12.5rem;
   max-width: 100%;
   object-fit: cover;
   margin: 0;
+  border-radius: 0.5rem;
+}
+
+/*==================================
+
+==================================
+
+================================*/
+
+.recipe-header {
+  background-color: var(--white-color);
+  padding: 1.875rem;
+  border-radius: 0.9375rem;
+  display: block;
+}
+
+.labels {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.label {
+  display: inline-block;
+  color: var(--label-text-color);
+  background-color: var(--label-color);
+  border-radius: 50rem;
+  padding: 0.3125rem 0.625rem;
+  gap: 2rem;
+  border: 0.15rem solid var(--black-color);
+  font-weight: 500;
+}
+
+.christmas-label {
+  color: var(--label-text-color);
+  background-color: var(--label-color);
+  border-radius: 50rem;
+  padding: 0.3125rem 0.625rem;
+  border: 0.15rem solid var(--black-color);
+  gap: 1rem;
+}
+
+/* Recipe information */
+.recipe-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.5625rem;
+  padding-top: 1.25rem;
+  border-top: 0.0625rem solid var(--info-border-color);
+}
+
+/* Each information box */
+.info-box {
+  background-color: var(--info-bg-color);
+  border: 0.0625rem solid var(--info-border-color);
+  border-radius: 0.625rem;
+  padding: 1.25rem 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3125rem;
+}
+
+/* Icons */
+.info-icon {
+  font-size: 1.375rem;
+}
+
+/* Labels */
+.info-label {
+  font-size: 1rem;
+  color: var(--label-text-color); /*--#777;*/
+  text-transform: uppercase;
+}
+
+/* Values */
+.info-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--black-color); /*#333;*/
+}
+/* form */
+form {
+  display: grid;
+  gap: 2 rem;
+  padding: 2rem;
+  background: var(--white-color);
+  border: 1px solid var(--info-border-color);
   border-radius: 8px;
 }
 
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+button {
+  padding: 0.75rem 1 rem;
+  cursor: pointer;
+}
+fieldset {
+  border: 1px solid var(--black-color);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--ingretext-color);
+  outline-offset: 2px;
+}
 /* =================================
    8. Mobile responsive styling
 ================================= */
 @media (max-width: 600px) {
   body {
-    padding: 10px;
+    padding: 0.625rem;
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   p,
   ul,
   ol {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
 
   .description,
   .conclusion {
-    font-size: 17px;
+    font-size: 1.0625rem;
     line-height: 1.6;
   }
 
   td {
-    padding: 3px;
+    padding: 0.1875rem;
   }
 
   figcaption {
-    font-size: 13px;
+    font-size: 0.8125rem;
+  }
+
+  .intro {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .description,
+  .main-image {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 auto;
   }
 }
+.image-gallery {
+  grid-template-columns: 1fr;
+}
 
-@media (max-width: 600px) {
-  .image-gallery {
-    grid-template-columns: 1fr;
-  }
+.recipe-info {
+  grid-template-columns: repeat(4, 1fr);
 }
